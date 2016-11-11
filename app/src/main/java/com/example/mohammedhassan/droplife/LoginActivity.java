@@ -91,6 +91,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 //attemptLogin();
+                Intent i = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(i);
 
 
             }
@@ -102,7 +104,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
-            return;                Intent i = new Intent(LoginActivity.this,MainActivity.clastartActivity(i);ss);
+
+
+            return;
+
 
         }
 

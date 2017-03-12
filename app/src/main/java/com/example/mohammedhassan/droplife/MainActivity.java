@@ -18,11 +18,14 @@ import com.firebase.client.Firebase;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.provider.FirebaseInitProvider;
 
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    Map<String, String> alanisawesomeMap = new HashMap<String, String>();
+    Map<String, Map<String, String>> users = new HashMap<String, Map<String, String>>();
     private Firebase mRes ;
     Button sendData ;
 
@@ -31,14 +34,24 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
-        sendData = (Button)findViewById(R.id.value1);
+        sendData = (Button)findViewById(R.id.Value1);
         mRes = new Firebase("https://dropapp-e408b.firebaseio.com/");
 
         sendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Firebase mReschild =mRes.child("Name");
-                mReschild.setValue("hassan");
+               Firebase usersRef = mRes.child("users");
+
+                alanisawesomeMap.put("address", "Turing");
+                alanisawesomeMap.put("N ID", "2084552222356225563");
+                alanisawesomeMap.put("fullName", "Alan Turing");
+                alanisawesomeMap.put("birthYear", "1912");
+                alanisawesomeMap.put("fullName", "Alan Turing");
+
+                //users.put("alanisawesome", alanisawesomeMap);
+                usersRef.push().setValue(alanisawesomeMap);
+
             }
         });
 

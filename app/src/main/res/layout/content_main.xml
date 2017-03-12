@@ -15,9 +15,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Value"
-        android:id="@+id/value1"
+        android:text="Add value"
+        android:id="@+id/Value1"
+        android:layout_marginTop="165dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp" />
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
